@@ -1,0 +1,121 @@
+body.active-modal {
+    overflow-y: hidden;
+}
+
+.btn-modal {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 0.8rem 1.2rem;
+    cursor: pointer;
+    border-radius: 5px; 
+    margin-bottom: 1.5rem;
+}
+
+.modal, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.overlay {
+    background: rgba(49,49,49,0.8);
+}
+.modal-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    padding: 14px 28px;
+    border-radius: 3px;
+    max-width: 600px;
+    min-width: 300px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 7px;
+}
+/* .image-upload-container {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+} */
+
+.box-decoration {
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    padding: 130px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-upload-label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.image-upload-input {
+    display: none;
+}
+
+.image-upload-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 0.8rem 1.2rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.image-upload-button:hover {
+    background-color: #3e8e41;
+}
+
+.img-display-before {
+    height: 200px;
+    width: 200px;
+    margin-left: 35px;
+}
+
+.img-display-after {
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+}
+.manage-box-decoration{
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.manage-modal-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    padding: 14px 28px;
+    border-radius: 3px;
+    max-width: 500px;
+    min-width: 300px;
+}

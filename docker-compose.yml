@@ -1,0 +1,57 @@
+version: '3.3'
+services:
+  server:
+    build: ./server
+    container_name: server_api
+    ports:
+      - '3002:3002'
+    volumes:
+      - ./server:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - db 
+  react:
+    build: ./react
+    container_name: front_end
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./react:/usr/src/app
+      - /usr/src/app/node_modules  # ปรับ path ของ node_modules
+    depends_on:
+      - server
+    mem_limit: 2g  # เพิ่มการกำหนดความจุหน่วยความจำ
+  db:
+    container_name: db
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
+      MYSQL_DATABASE: MYSQL_DATABASE
+      MYSQL_USER: MYSQL_USER
+      MYSQL_PASSWORD: MYSQL_PASSWORD
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8000:80"
+    restart: always
+    environment:
+      PMA_HOST: db
+    depends_on:
+      - db
+  python:
+    container_name: bot_api
+    build: ./python
+    depends_on:
+      - db
+    volumes:
+      - ./python/mt4:/mt4
+    ports:
+      - "5555:5555/tcp"
+
+volumes:
+  db_data: {}  # กำหนด Docker Volume สำหรับฐานข้อมูล MySQL

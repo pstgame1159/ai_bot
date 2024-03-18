@@ -1,0 +1,13 @@
+.home-container {
+    position: fixed;
+    top: 70px; /* Adjust this value according to your navbar height */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px); /* Adjust this value according to your navbar height */
+    background-image: url('../../asset/stonkbackground.png'); /* Set the path to your desired image */
+    background-size: cover;
+    background-position: top;
+    color: #fff;
+    text-align: center;
+
+  }
